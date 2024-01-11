@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Style.css" />
+    <title>RGB Color Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="background"></div>
+        <form action="">
+          <div class="input">
+            <label for="">R</label>
+            <input
+              type="range"
+              value="0"
+              min="0"
+              max="255"
+              id="red"
+              oninput="colors()"
+            />
+          </div>
+          <div class="input">
+            <label for="">G</label>
+            <input
+              type="range"
+              value="0"
+              min="0"
+              max="255"
+              id="green"
+              oninput="colors()"
+            />
+          </div>
+          <div class="input">
+            <label for="">B</label>
+            <input
+              type="range"
+              value="0"
+              min="0"
+              max="255"
+              id="blue"
+              oninput="colors()"
+            />
+          </div>
+          <span class="output"> rgb (0,0,0) </span>
+        </form>
+      </div>
+    </div>
+    <h2 class="end">created by => <span class="end">mohamed ayman</span></h2>
+
+    <script>
+      function colors() {
+        var backgroundBox = document.querySelector(".background");
+        var redId = document.getElementById("red").value;
+        var greenId = document.getElementById("green").value;
+        var blueId = document.getElementById("blue").value;
+        var output = document.querySelector(".output");
+        var end = document.querySelector(".end span");
+        let color = "rgb(" + redId + "," + greenId + "," + blueId + ")";
+        backgroundBox.style.backgroundColor = color;
+        output.innerHTML = color;
+        end.style.color = color;
+      }
+    </script>
+  </body>
+</html>
